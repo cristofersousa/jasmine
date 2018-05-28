@@ -4,12 +4,75 @@
 
 *[via  @cristofersousa](https://twitter.com/cristofersousa)*
 
-> Proposta desse repositório é auxiliar quem está iniciando no universo de testes front-end adotando as biblioteca **Jasmine** e **Karma**, ao final dessa leitura e dos exemplos e exercícios referidos, você 
+> Proposta desse repositório é auxiliar quem está iniciando no universo de testes front-end adotando as biblioteca **Jasmine** e **Karma**.
+
+Minha proposta com esse guia é fazer um estudo empirico com exemplos e exercícios guiados,
+detalhando todos os recursos que a lib oferece para fazermos
+testes unitários em funções puras, abordando TDD. 
 
 
+- [Documentação Oficial](https://jasmine.github.io/)
+- [Repositório Oficial](https://github.com/jasmine/jasmine)
 
-[Documentação Oficial](https://jasmine.github.io/)
-[Repositório Oficial](https://github.com/jasmine/jasmine)
+## Sumário
+
+- [Suites](#suites)
+- [Specs](#specs)
+- Expectations
+- Matchers
+- toBe
+- toEqual
+- toMatch
+- toBeDefined
+- toBeUndefined
+- toBeNull
+- toBeTruthy
+- toBeFalsy
+- toContain
+- toBeLessThan
+- toBeGreaterThan
+- toThrow
+- toThrowError
+- Falha manual (Fail)
+- afterEach
+- beforeEach
+- beforeAll
+- afterEach
+- aninhando Suites
+- desabilitando Suites
+- desabilitando testes
+- Spies
+- spyOn
+- toHaveBeenCalled
+- toHaveBeenCalleTimes
+- toHaveBeenCalledWith
+- and.callThrough
+- and.returnValue
+- and.returnValues
+- and.callFak
+- and.throwError
+- calls.any
+- and.callFake
+- calls.count- calls.argsFor
+- calls.allArgs
+- calls.all
+- calls.mostRecent
+- calls.first
+- calls.reset
+- createSpy
+- createSpyObj
+- Objeto 'jasmine'
+- jasmine.any
+- jasmine.anything
+- jasmine.objectContaining
+- jasmine.arrayContaining
+- jasmine.stringMatching
+- Jasmine Clock
+
+
+ 
+
+
 
 
 
