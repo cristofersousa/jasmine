@@ -6,9 +6,9 @@
 
 > Proposta desse repositório é auxiliar quem está iniciando no universo de testes front-end adotando as biblioteca **Jasmine** e **Karma**.
 
-Minha proposta com esse guia é fazer um estudo empirico com exemplos e exercícios guiados,
+Minha proposta com esse guia é fazer um estudo empírico com exemplos e exercícios guiados,
 detalhando todos os recursos que a lib oferece para fazermos
-testes unitários em funções puras, abordando TDD. 
+testes unitários engloobando a importância de usarmos funções puras, para facilitar a adesão do TDD. 
 
 
 - [Documentação Oficial](https://jasmine.github.io/)
@@ -79,8 +79,8 @@ testes unitários em funções puras, abordando TDD.
 ## Suites
 
 - Suites de testes servem para definir o escopo do que será testado.
-- Uma aplicação é composta por diversas suĩtes de testes.
-- No Jasmine, a suíte é uma função flobal JavaScript chamada `describe`
+- Uma aplicação é composta por diversas `suítes` de testes.
+- No Jasmine, a suíte é uma função global JavaScript chamada `describe`
 que possui sempre dois parâmetros, que seriam sua descrição e os testes(specs).
 
 **Ex:** 
@@ -116,21 +116,45 @@ describe("Operação de Adição", () => {
 
 ## Specs
 
-- Specs são os testes que validam uma suĩte de testes
+- Specs são os testes que validam uma suíte de testes
 - Assim como as suítes, ela é uma função global JavaScript chamada `it`, que contém:
   - Dois parâmetros; 
   - Uma descrição;
   - Uma função.
 - Dentro do segundo parâmetro, é onde adicionamos as verificações (expectations)
+- Podemos adicionar quantas Specs desejarmos dentro da nossa suíte.
 
+> Exemplo:  Vamos fazer um teste, crie uma function que simule operações algébricas. 
+
+    - a. Ela tem que fazer uma operação de divisão;
+    - b. Se na operação de divisão o valor não for maior que zero retornar `error`;
+    
+    function calculator(a,b) {
+      if ( b == 0 ) {
+        throw new Error('Parameter b must be greater than 0(zero).');
+    }
+
+    return (a / b) ;
+    }
 
 
 ```
-//es5
+//nosso teste com es5
 
+-- apenas com uma suíte
 describe("Operação de Adição", function() {
-  it("Eu espero que essa operação faça uma soma", function() {
-    expect(Calculator.sum(1,9)).toBe(10);
+  it("Eu espero que essa operação faça uma divisão com retorno positivo", function() {
+    expect(calculator(25,5)).toBe(5);
+  });
+}
+
+-- com várias suítes
+describe("Operação de Divisão", function() {
+  it("Eu espero que essa operação faça uma divisão com retorno positivo", function() {
+    expect(Calculator.divide(25,5)).toBe(5);
+  });
+  it("Eu espero que essa operação retorne null or undefined", function() {
+    expect(Calculator.divide(9,0)).toEqual('Parameter b must be greater than 0(zero).');
   });
 }
 
